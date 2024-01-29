@@ -1,0 +1,22 @@
+---
+interface Props {
+	center?: boolean;
+}
+
+const { center = false } = Astro.props;
+---
+
+<h2
+	class:list={[
+		'section__title',
+		{
+			'title-center': center,
+		},
+	]}
+>
+	<slot />
+</h2>
+
+<style>
+
+</style>

@@ -1,0 +1,22 @@
+---
+interface Props {
+	name: string;
+	href: string;
+}
+
+const { name, href } = Astro.props;
+---
+
+<li class='nav__item'>
+	<a
+		href={href}
+		class:list={[
+			'nav__link',
+			{
+				'active-link': Astro.url.pathname === href,
+			},
+		]}>{name}</a
+	>
+</li>
+
+<style></style>

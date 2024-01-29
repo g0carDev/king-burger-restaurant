@@ -1,0 +1,54 @@
+---
+import NavListContainer from './NavListContainer.astro';
+---
+
+<nav class='nav container'>
+	<a href='/' class='nav__logo'>
+		<img src='assets/img/logo.png' alt='' class='nav__logo-img' />
+	</a>
+
+	<div class='nav__menu' id='nav-menu'>
+		<a href='/' class='logo__mobile'>
+			<img src='assets/img/logo-dark.png' alt='' class='logo__mobile-img' />
+		</a>
+
+		<NavListContainer />
+
+		<div class='nav__close' id='nav-close'>
+			<i class='ri-close-circle-line'></i>
+		</div>
+	</div>
+
+	<div class='nav__btns'>
+		<div class='nav__toggle' id='nav-toggle'>
+			<i class='ri-menu-line'></i>
+		</div>
+
+		<a href='/reservation' class='button reservation__btn'>Reserve A Table</a>
+	</div>
+</nav>
+
+<script>
+	/*=============== SHOW MENU ===============*/
+	const navMenu = document.getElementById('nav-menu'),
+		navToggle = document.getElementById('nav-toggle'),
+		navClose = document.getElementById('nav-close');
+
+	/*===== MENU SHOW =====*/
+	/* Validate if constant exists */
+	if (navToggle) {
+		navToggle.addEventListener('click', () => {
+			navMenu?.classList.add('show-menu');
+		});
+	}
+
+	/*===== MENU HIDDEN =====*/
+	/* Validate if constant exists */
+	if (navClose) {
+		navClose.addEventListener('click', () => {
+			navMenu?.classList.remove('show-menu');
+		});
+	}
+</script>
+
+<style></style>

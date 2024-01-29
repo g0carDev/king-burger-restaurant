@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HomePage from '../components/pages/HomePage.astro';
+import AboutPage from '../components/pages/AboutPage.astro';
+import MenuPage from '../components/pages/MenuPage.astro';
+import ServicesPage from '../components/pages/ServicesPage.astro';
+import DealsPage from '../components/pages/DealsPage.astro';
+import ReservationPage from '../components/pages/ReservationPage.astro';
+import GalleryPage from '../components/pages/GalleryPage.astro';
+---
+
+<Layout title='Burger | Restaurant'>
+	<main class='main'>
+		<HomePage />
+		<AboutPage />
+		<ServicesPage />
+		<DealsPage />
+		<MenuPage />
+		<ReservationPage />
+		<GalleryPage />
+	</main>
+	<!--========== SCROLL UP ==========-->
+	<a href='#' class='scrollup' id='scroll-up'>
+		<i class='ri-arrow-up-line scrollup__icon'></i>
+	</a>
+	<script>
+		/*=============== SHOW SCROLL UP ===============*/
+		function scrollUp() {
+			const scrollUp = document.getElementById('scroll-up');
+			// when the scroll is higher than 350 viewport height, add the show-scroll class to a tag with the scroll-top class
+			if (scrollUp) {
+				if (window.pageYOffset > 350) {
+					scrollUp.classList.add('show-scroll');
+				} else {
+					scrollUp.classList.remove('show-scroll');
+				}
+			}
+			else scrollUp!.classList.remove('show-scroll');
+		}
+
+		window.addEventListener('scroll', scrollUp);
+	</script>
+</Layout>
+
+<style></style>
